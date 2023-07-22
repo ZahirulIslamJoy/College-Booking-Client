@@ -9,6 +9,7 @@ import Login from "../home/login/Login";
 import College from "../navpages/college/College";
 import ClgDetails from "../navpages/college/ClgDetails";
 import Admission from "../navpages/admission/Admission";
+import AdmissionDetails from "../navpages/admission/AdmissionDetails";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         {
             path: "/admission",
             element:<Admission></Admission>,
+        },
+        {
+            path: "/admission/:id",
+            element:<AdmissionDetails></AdmissionDetails>,
         },
         
 
