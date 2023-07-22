@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,10 +34,11 @@ const Nav = () => {
           </h1>
         </div>
         <div className="flex text-sm font-semibold gap-5">
-         <a href="#aboutme"> <h1 className="transition-underline cursor-pointer">Home</h1></a>
-          <a href="#project"><h1 className="transition-underline  cursor-pointer ">College</h1></a>
-         <a href="#skills"> <h1 className="transition-underline cursor-pointer">Admission</h1></a>
-         <a href="#contact"> <h1 className="transition-underline  cursor-pointer ">My College</h1></a>
+          <h1 className="transition-underline cursor-pointer">Home</h1>
+          <Link to="/register"><h1 className="transition-underline cursor-pointer">Register</h1></Link>
+          <h1 className="transition-underline  cursor-pointer ">College</h1>
+         <h1 className="transition-underline cursor-pointer">Admission</h1>
+        <h1 className="transition-underline  cursor-pointer ">My College</h1>
         </div>
       </div>
       <div className="w-[90%] mx-auto ">
