@@ -34,8 +34,8 @@ const Nav = () => {
           </h1>
         </div>
         <div className="flex text-sm font-semibold gap-5">
-          <h1 className="transition-underline cursor-pointer">Home</h1>
-          <Link to="/register"><h1 className="transition-underline cursor-pointer">Register</h1></Link>
+          <Link to="/"><h1 className="transition-underline cursor-pointer">Home</h1></Link>
+          <Link to="/login"><h1 className="transition-underline cursor-pointer">Login</h1></Link>
           <h1 className="transition-underline  cursor-pointer ">College</h1>
          <h1 className="transition-underline cursor-pointer">Admission</h1>
         <h1 className="transition-underline  cursor-pointer ">My College</h1>

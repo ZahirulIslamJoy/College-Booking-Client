@@ -54,7 +54,6 @@ const Register = () => {
       .then((result) => {
         update(result, name, photo);
         handeleSignOut();
-        console.log(result);
         // navigate("/login");   
       })
       .catch((error) => {
