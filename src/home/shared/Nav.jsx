@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const {user}=useContext(AuthContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,10 +38,12 @@ const Nav = () => {
         </div>
         <div className="flex text-sm font-semibold gap-5">
           <Link to="/"><h1 className="transition-underline cursor-pointer">Home</h1></Link>
-          <Link to="/login"><h1 className="transition-underline cursor-pointer">Login</h1></Link>
-          <h1 className="transition-underline  cursor-pointer ">College</h1>
-         <h1 className="transition-underline cursor-pointer">Admission</h1>
+          <Link to='/clg' ><h1 className="transition-underline  cursor-pointer ">College</h1></Link>
+         <Link to="/admission" ><h1 className="transition-underline cursor-pointer">Admission</h1></Link>
         <h1 className="transition-underline  cursor-pointer ">My College</h1>
+        {
+            user ? <span className="text-[#64ffda] cursor-pointer" >{user.displayName}</span> :<Link to="/login"><h1 className="transition-underline cursor-pointer">Login</h1></Link>
+        }
         </div>
       </div>
       <div className="w-[90%] mx-auto ">
