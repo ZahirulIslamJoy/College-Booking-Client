@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.transition-underline {
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.transition-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background-color: #64ffda;
+  transition: width 0.3s ease;
+}
+.transition-underline:hover::after {
+  width: 100%;
+}
