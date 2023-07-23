@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth";
 import app from '../firebase/firebase';
 
@@ -16,6 +16,10 @@ const AuthProviders = ({children}) => {
     const signInWithGit=()=>{
         setLoading(true)
         return signInWithPopup(auth,gitProvider)
+    }
+
+    const resets=(email)=>{
+       return  sendPasswordResetEmail(auth, email)
     }
 
     const creatUserWithEp=(email,pass)=>{
@@ -39,13 +43,14 @@ const AuthProviders = ({children}) => {
     }
 
     const authShare={
-        signInWithGit,creatUserWithEp,updateProfile,user,handeleSignOut,handleLoginWithEp,loading
+        signInWithGit,creatUserWithEp,updateProfile,user,handeleSignOut,handleLoginWithEp,loading,resets
     }
 
     //get the current looged in user
     useEffect(()=>{
         const unSubscribe=onAuthStateChanged(auth, (loggedUser) => {
             setUser(loggedUser);
+            setLoading(false);
           });
           return ()=>{
            unSubscribe();

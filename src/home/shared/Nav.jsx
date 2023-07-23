@@ -37,7 +37,7 @@ const Nav = () => {
       <div className="  hidden  lg:flex w-[90%]  h-full  items-center pt-4 mx-auto justify-between">
         <div className="text-2xl font-bold">
           <h1>
-            Logo
+          Admission Zone
           </h1>
         </div>
         <div className="flex text-sm font-semibold gap-5">
@@ -46,7 +46,7 @@ const Nav = () => {
          <Link to="/admission" ><h1 className="transition-underline cursor-pointer">Admission</h1></Link>
         <Link to="/myclg" ><h1 className="transition-underline  cursor-pointer ">My College</h1></Link>
         {
-            user ? <span className="text-[#64ffda] cursor-pointer" >{user.displayName} </span>  :<Link to="/login"><h1 className="transition-underline cursor-pointer">Login</h1></Link>
+            user ? <Link to="/user"><span className="text-[#64ffda] cursor-pointer" >{user.displayName} </span> </Link> :<Link to="/login"><h1 className="transition-underline cursor-pointer">Login</h1></Link>
         }
         {
             user?<span><button onClick={handleSignOut} >Signout</button></span>:""

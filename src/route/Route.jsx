@@ -13,6 +13,9 @@ import AdmissionDetails from "../navpages/admission/AdmissionDetails";
 import Myclg from "../navpages/myclg/Myclg";
 import Main from "../main/Main";
 import Error from "../error/Error";
+import PrivateRoute from "./PrivateRoute";
+import Profile from "../navpages/profile/Profile";
+import Reset from "../home/login/Reset";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +31,10 @@ const router = createBrowserRouter([
             path: "/",
             element:<Home></Home>, 
         },
+        {
+            path: "/reset",
+            element:<Reset></Reset>, 
+        },
         
         {
             path: "/login",
@@ -38,8 +45,12 @@ const router = createBrowserRouter([
             element:<College></College>
         },
         {
+            path: "/user",
+            element:<Profile></Profile>
+        },
+        {
             path: "/clg/:id",
-            element:<ClgDetails></ClgDetails>
+            element:<PrivateRoute><ClgDetails></ClgDetails></PrivateRoute>
         },
         {
             path: "/admission",

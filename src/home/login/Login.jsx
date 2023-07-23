@@ -51,12 +51,12 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Login is successfull",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          position: "top-end",
+          icon: "success",
+          title: "Login is successfull",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         navigate("/");
       })
       .catch((error) => {
@@ -66,17 +66,15 @@ const Login = () => {
   };
 
   return (
-    <div  className=" bg-[#010313]  h-screen text-white">
+    <div className=" bg-[#010313]  h-screen text-white">
       <h1 className="text-center text-3xl font-semibold  pt-32">
         Connect Us With Login!
       </h1>
       <div className="w-1/2 mt-12 mx-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="">
-          <label
-              className="block mb-2 text-sm font-medium text-white dark:text-white"
-            >
-             Email
+            <label className="block mb-2 text-sm font-medium text-white dark:text-white">
+              Email
             </label>
             <input
               {...register("email")}
@@ -86,10 +84,8 @@ const Login = () => {
             />
           </div>
           <div>
-          <label
-              className="block mb-2 text-sm font-medium text-white dark:text-white"
-            >
-            Password
+            <label className="block mb-2 text-sm font-medium text-white dark:text-white">
+              Password
             </label>
             <input
               {...register("password")}
@@ -101,10 +97,9 @@ const Login = () => {
           </div>
           <div onClick={() => setShowPass(!showPass)} className="mt-2">
             {showPass ? (
-             <BsFillEyeSlashFill size={25}  ></BsFillEyeSlashFill>
+              <BsFillEyeSlashFill size={25}></BsFillEyeSlashFill>
             ) : (
-              <BsFillEyeFill size={25}  ></BsFillEyeFill>
-              
+              <BsFillEyeFill size={25}></BsFillEyeFill>
             )}
           </div>
           <button
@@ -117,9 +112,19 @@ const Login = () => {
         <p>
           Don't have an account yet?
           <Link to="/register">
-            <span className="text-blue-700 px-1 bg-black py-1 rounded-sm cursor-pointer ">Register</span>
+            <span className="text-blue-700 px-1 bg-black py-1 rounded-sm cursor-pointer ">
+              Register
+            </span>
           </Link>
         </p>
+        <Link to="/reset">
+          <button
+            type="submit"
+            className="text-white mt-5 bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 mr-2 focus:outline-none "
+          >
+            Reset Password
+          </button>
+        </Link>
         <div className="text-center">
           <h1 className="mt-12 text-black">OR!!</h1>
           <div className="flex justify-center mt-4">
