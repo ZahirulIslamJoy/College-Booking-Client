@@ -6,7 +6,11 @@ const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const {user}=useContext(AuthContext);
+  const {user,handeleSignOut}=useContext(AuthContext);
+
+   const  handleSignOut =()=>{
+        handeleSignOut()
+   }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +46,10 @@ const Nav = () => {
          <Link to="/admission" ><h1 className="transition-underline cursor-pointer">Admission</h1></Link>
         <h1 className="transition-underline  cursor-pointer ">My College</h1>
         {
-            user ? <span className="text-[#64ffda] cursor-pointer" >{user.displayName}</span> :<Link to="/login"><h1 className="transition-underline cursor-pointer">Login</h1></Link>
+            user ? <span className="text-[#64ffda] cursor-pointer" >{user.displayName} </span>  :<Link to="/login"><h1 className="transition-underline cursor-pointer">Login</h1></Link>
+        }
+        {
+            user?<span><button onClick={handleSignOut} >Signout</button></span>:""
         }
         </div>
       </div>

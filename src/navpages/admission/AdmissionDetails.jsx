@@ -13,8 +13,6 @@ const AdmissionDetails = () => {
         const name = data.name;
         const photo = data.photo;
         const email = data.email;
-        const password = data.password;
-        const confirmpass = data.confirmpassword;
     
     }    
 
