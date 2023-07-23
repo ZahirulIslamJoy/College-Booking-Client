@@ -1,12 +1,14 @@
 import React from 'react';
-import Nav from '../shared/Nav';
-import { Outlet } from 'react-router-dom';
+import Search from './search/Search';
+import Popularclg from './popularclg/Popularclg';
+import Gallery from './gallery/Gallery';
 
 const Home = () => {
     return (
         <div>
-            <Nav></Nav>
-            <Outlet></Outlet>
+            <Search></Search>
+            <Popularclg></Popularclg>
+            <Gallery></Gallery>
         </div>
     );
 };
