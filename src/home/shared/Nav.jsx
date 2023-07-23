@@ -44,7 +44,7 @@ const Nav = () => {
           <Link to="/"><h1 className="transition-underline cursor-pointer">Home</h1></Link>
           <Link to='/clg' ><h1 className="transition-underline  cursor-pointer ">College</h1></Link>
          <Link to="/admission" ><h1 className="transition-underline cursor-pointer">Admission</h1></Link>
-        <h1 className="transition-underline  cursor-pointer ">My College</h1>
+        <Link to="/myclg" ><h1 className="transition-underline  cursor-pointer ">My College</h1></Link>
         {
             user ? <span className="text-[#64ffda] cursor-pointer" >{user.displayName} </span>  :<Link to="/login"><h1 className="transition-underline cursor-pointer">Login</h1></Link>
         }

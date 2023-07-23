@@ -10,6 +10,7 @@ import College from "../navpages/college/College";
 import ClgDetails from "../navpages/college/ClgDetails";
 import Admission from "../navpages/admission/Admission";
 import AdmissionDetails from "../navpages/admission/AdmissionDetails";
+import Myclg from "../navpages/myclg/Myclg";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         {
             path: "/admission/:id",
             element:<AdmissionDetails></AdmissionDetails>,
+        },
+        {
+            path: "/myclg",
+            element:<Myclg></Myclg>,
         },
         
 

@@ -1,13 +1,15 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Admission = () => {
   const [college, setCollege] = useState([]);
 
-  axios.get("http://localhost:5000/class").then((res) => {
+  useEffect(()=>{
+    axios.get("http://localhost:5000/class").then((res) => {
     setCollege(res.data);
-  });
+  })
+  },[])
 
   return (
     <div className="bg-[#010313] min-h-screen text-[#D8E0FC]">
