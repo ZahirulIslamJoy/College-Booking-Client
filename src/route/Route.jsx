@@ -12,11 +12,13 @@ import Admission from "../navpages/admission/Admission";
 import AdmissionDetails from "../navpages/admission/AdmissionDetails";
 import Myclg from "../navpages/myclg/Myclg";
 import Main from "../main/Main";
+import Error from "../error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:<Main></Main>,
+    errorElement:<Error></Error>,
     children:[
         {
             path: "/register",
