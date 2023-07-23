@@ -41,7 +41,7 @@ const Search = () => {
               type="text"
               required
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              placeholder="Email Address "
+              placeholder="Enter College Name"
             />
             {errors.name?.type === "required" && (
               <p className="text-red-600" role="alert">

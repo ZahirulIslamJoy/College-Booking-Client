@@ -34,6 +34,15 @@ const AdmissionDetails = () => {
     const sendData ={
       name,email,ids, clgName,subject
     };
+    if(email == null){
+      return Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Please Login to apply College",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
     fetch(`http://localhost:5000/admission`,{
       method:"POST",
       headers: { 'Content-Type': 'application/json' },
@@ -67,7 +76,7 @@ const AdmissionDetails = () => {
             </label>
             <input
               type="text"
-              value={user?.displayName}
+              value={user?.displayName || "Login First "}
               readOnly
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="Your Name"
@@ -78,7 +87,7 @@ const AdmissionDetails = () => {
               Email*
             </label>
             <input
-              value={user?.email}
+              value={user?.email   || "Login First " }
               readOnly
               type="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"

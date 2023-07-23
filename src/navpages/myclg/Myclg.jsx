@@ -23,7 +23,7 @@ const Myclg = () => {
       <div>
         <div className="relative mb-20 overflow-x-auto">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-[#64ffda] dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="px-1 py-3">
                   Serial No
